@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocalidadesService } from 'src/app/core/services/localidades.service';
 import { UF } from 'src/app/shared/models/uf.model';
 
@@ -10,13 +11,16 @@ import { UF } from 'src/app/shared/models/uf.model';
 export class SignUpComponent implements OnInit {
 
   constructor(
-    private localidades: LocalidadesService
+    private localidades: LocalidadesService,
+    private formBuilder: FormBuilder
   ) { }
 
   estados: UF[];
+  form: FormGroup;
 
   ngOnInit() {
     this.getUfs();
+    this.criarForm();
   }
 
   getUfs() {
@@ -24,5 +28,18 @@ export class SignUpComponent implements OnInit {
       .getUfs()
         .subscribe(data => this.estados = data);
   }
+
+  cadastrar() {}
+
+  private criarForm(): void {
+    this.form = this.formBuilder.group({
+      nome: ['', Validators.required],
+      email: ['', Validators.required],
+      senha: ['', Validators.required],
+      cidade: ['', Validators.required],
+      uf: ['', Validators.required],
+    });
+  }
+
 
 }
