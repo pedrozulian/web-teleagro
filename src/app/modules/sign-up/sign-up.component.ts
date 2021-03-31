@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { LocalidadesService } from 'src/app/core/services/localidades.service';
 import { UsuariosService } from 'src/app/core/services/usuarios.service';
 import { UF } from 'src/app/shared/models/uf.model';
@@ -31,8 +31,9 @@ export class SignUpComponent implements OnInit {
         .subscribe(data => this.estados = data);
   }
 
-  cadastrar() {
+  cadastrar(f: NgForm): void {
     if (this.form.valid) {
+      f.resetForm();
       console.log('cadastrar: ', this.form.value);
       this.usuariosService
         .cadastrar(this.form.value)
