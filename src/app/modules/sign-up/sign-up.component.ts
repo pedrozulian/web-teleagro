@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LocalidadesService } from 'src/app/core/services/localidades.service';
 import { UsuariosService } from 'src/app/core/services/usuarios.service';
 import { ToastsService } from 'src/app/shared/components/toasts-global/toasts-global.service';
@@ -16,6 +17,7 @@ export class SignUpComponent implements OnInit {
     private localidades: LocalidadesService,
     private formBuilder: FormBuilder,
     private usuariosService: UsuariosService,
+    private router: Router,
     public toastService: ToastsService
   ) { }
 
@@ -43,6 +45,7 @@ export class SignUpComponent implements OnInit {
           if (!data.error) {
             f.resetForm();
             this.showSucesso(data.mensagem);
+            this.router.navigate(['sign-in']);
           } else {
             this.showErro(data.mensagem);
           }
