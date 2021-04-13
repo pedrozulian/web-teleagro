@@ -6,6 +6,7 @@ import { LayoutModule } from './modules/layout/layout.module';
 import { AppComponent } from './app.component';
 import { SignUpModule } from './modules/sign-up/sign-up.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     LayoutModule,
-    SignUpModule
+    SignUpModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
