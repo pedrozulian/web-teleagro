@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { SignUpModule } from './modules/sign-up/sign-up.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignInComponent } from './modules/sign-in/sign-in.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
