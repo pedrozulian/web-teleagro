@@ -49,6 +49,7 @@ export class SignUpComponent implements OnInit {
         })
         .catch(error => console.error(error));
     }
+    this.showErro('Campos de cadastro invalido! Confira se todos campos estão preenchidos.')
   }
 
   private criarForm(): void {
@@ -63,11 +64,11 @@ export class SignUpComponent implements OnInit {
   }
 
   showSucesso(mensagem: string) {
-    this.toastService.show(mensagem, { classname: 'bg-success text-light', delay: 2000 })
+    this.toastService.show(mensagem, { classname: 'bg-success text-light', delay: 2500 })
   }
 
   showErro(mensagem: string) {
-    this.toastService.show(mensagem, { classname: 'bg-danger text-light', delay: 2000 })
+    this.toastService.show(mensagem, { classname: 'bg-danger text-light', delay: 2500 })
   }
 
 }
