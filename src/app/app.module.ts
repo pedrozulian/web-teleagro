@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignInComponent } from './modules/sign-in/sign-in.component';
 import { ProfileComponent } from './modules/profile/profile.component';
+import { PublicationComponent } from './modules/publication/publication.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    ProfileComponent
+    ProfileComponent,
+    PublicationComponent
   ],
   imports: [
     BrowserModule,
