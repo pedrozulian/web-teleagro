@@ -8,10 +8,12 @@ import { SignUpModule } from './modules/sign-up/sign-up.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignInComponent } from './modules/sign-in/sign-in.component';
+import { ProfileComponent } from './modules/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
