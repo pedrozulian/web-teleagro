@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { PerfilUsuario } from 'src/app/shared/models/perfil-usuario.model';
 import { UtilsService } from './utils.service';
 
 @Injectable({
@@ -21,5 +23,12 @@ export class UsuariosService {
 
   login(form): Observable<any> {
     return this.http.post(`${this.utils.apiUrl}/usuarios/login`, form);
+  }
+
+  perfil(idUsuario: number) {
+    return this.http.get<PerfilUsuario[]>(`${this.utils.apiUrl}/usuarios/perfil/${idUsuario}`, this.utils.getHeader())
+    .pipe(
+      map((usuario: PerfilUsuario[]) => usuario.map(u => new PerfilUsuario().deserialize(u)))
+    );
   }
 }
