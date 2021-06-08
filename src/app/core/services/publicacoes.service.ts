@@ -14,8 +14,8 @@ export class PublicacoesService {
     private utils: UtilsService
   ) { }
 
-  salvarImagem(imagem) {
-    const urlImagem = '/home/pedro/Pictures' + imagem.name;
+  salvarPublicacao(publicacao: Publicacao) {
+    return this.http.post(`${this.utils.apiUrl}/publicacoes`, publicacao);
   }
 
   getPublicacoesUsuario(id_usuario) {
