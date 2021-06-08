@@ -1,6 +1,6 @@
 <div class="p-2">
-    <p>@pedrozulian</p>
-    <img src="../../../assets/paisagem.jpg" alt="" class="rounded" style="max-width: 100%;">
-    <p class="pt-2">Terminando o domingo e prestes a iniciar uma nova semana abençoada!</p>
+    <p>@{{ publicacao.nome_usuario }}</p>
+    <img src="../../../assets/{{ publicacao.url }}" alt="" class="rounded" style="max-width: 100%;">
+    <p class="pt-2">{{ publicacao.texto }}</p>
     <hr>
 </div>
