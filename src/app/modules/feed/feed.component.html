@@ -16,7 +16,9 @@
                     </div>
                 </form>
             </div>
-            <app-publication></app-publication>
+            <div *ngFor="let publicacao of publicacoes;">
+                <app-publication [publicacao]="publicacao"></app-publication>
+            </div>
         </div>
         <div class="col-1 col-md-3"></div>
     </div>
