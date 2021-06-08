@@ -18,8 +18,15 @@ export class PublicacoesService {
     const urlImagem = '/home/pedro/Pictures' + imagem.name;
   }
 
-  publicacoesUsuario(id_usuario) {
-    return this.http.get(`${this.utils.apiUrl}/publicacoes/${id_usuario}`)
-      .pipe(map((publicacoes: Publicacao[]) => publicacoes.map(publicacao => new Publicacao().deserialize(publicacao))));
+  getPublicacoesUsuario(id_usuario) {
+    return this.http.get(`${this.utils.apiUrl}/publicacoes/usuario/${id_usuario}`)
+      .pipe(map((publicacoes: Publicacao[]) => publicacoes.map(p => new Publicacao().deserialize(p))));
   }
+
+  getTodasPublicacoes() {
+    return this.http.get(`${this.utils.apiUrl}/publicacoes/todas`)
+      .pipe(map((publicacoes: Publicacao[]) => publicacoes.map(p => new Publicacao().deserialize(p))));
+  }
+
+
 }
