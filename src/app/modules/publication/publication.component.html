@@ -1,5 +1,8 @@
 <div class="p-2">
-    <p>@{{ publicacao.nome_usuario }}</p>
+    <div class="mb-2">
+        <img src="../../../assets/{{ publicacao.foto_usuario }}" alt="" class="rounded-circle img-profile d-inline">
+        <p class="d-inline ml-2">@{{ publicacao.nome_usuario }}</p>
+    </div>
     <img src="../../../assets/{{ publicacao.url }}" alt="" class="rounded" style="max-width: 100%;">
     <p class="pt-2">{{ publicacao.texto }}</p>
     <hr>
