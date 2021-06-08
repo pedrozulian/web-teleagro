@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FeedComponent } from './modules/feed/feed.component';
 import { LayoutComponent } from './modules/layout/layout.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { SignInComponent } from './modules/sign-in/sign-in.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
     { path: '', redirectTo: 'sign-up', pathMatch: 'full' },
     { path: 'sign-up', component: SignUpComponent },
     { path: 'sign-in', component: SignInComponent },
-    { path: 'profile', component: ProfileComponent }
+    { path: 'profile', component: ProfileComponent },
+    { path: 'feed',    component: FeedComponent }
   ] }
 ];
 
