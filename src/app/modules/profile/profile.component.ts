@@ -21,6 +21,9 @@ export class ProfileComponent implements OnInit {
   usuario: PerfilUsuario;
   idUsuario: number;
   publicacoes: Publicacao[];
+  imagemCarregada: boolean = false;
+  foto: string;
+
   ngOnInit(): void {
     this.carregarDadosPessoais();
     this.carregarPublicacoes();
@@ -39,6 +42,14 @@ export class ProfileComponent implements OnInit {
     this.publicacoesService
       .getPublicacoesUsuario(this.idUsuario)
         .subscribe(data => this.publicacoes = data);
+  }
+
+  processImage(event) {
+    this.foto = event.target.files[0].name;
+    console.log(this.foto);
+    this.usuariosService
+      .trocarFoto(this.idUsuario, this.foto)
+      .subscribe(() => window.location.reload());
   }
 
 }
