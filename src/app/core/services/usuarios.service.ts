@@ -18,4 +18,8 @@ export class UsuariosService {
     return this.http
             .post(`${this.utils.apiUrl}/usuarios/cadastro/`, form);
   }
+
+  login(form) {
+    return this.http.post(`${this.utils.apiUrl}/usuarios/login`, form);
+  }
 }
