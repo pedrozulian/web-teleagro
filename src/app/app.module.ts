@@ -11,6 +11,7 @@ import { SignInComponent } from './modules/sign-in/sign-in.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { PublicationComponent } from './modules/publication/publication.component';
 import { FeedComponent } from './modules/feed/feed.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { FeedComponent } from './modules/feed/feed.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     LayoutModule,
