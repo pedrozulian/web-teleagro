@@ -10,12 +10,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignInComponent } from './modules/sign-in/sign-in.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { PublicationComponent } from './modules/publication/publication.component';
+import { FeedComponent } from './modules/feed/feed.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     ProfileComponent,
-    PublicationComponent
+    PublicationComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
