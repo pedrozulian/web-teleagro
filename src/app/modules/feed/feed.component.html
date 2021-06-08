@@ -3,15 +3,15 @@
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
             <div style="background-color: rgb(245, 245, 245);" class="create-publication rounded mt-2">
-                <form action="">
+                <form [formGroup]="form" action="" (ngSubmit)="salvarPublicacao()">
                     <div class="mb-3 p-2">
-                        <label for="texto" class="form-label">Escreva uma mensagem</label>
-                        <textarea type="email" class="form-control" id="texto" rows="3"></textarea>
+                        <label class="form-label">Escreva uma mensagem</label>
+                        <textarea type="email" formControlName="texto" class="form-control" rows="3"></textarea>
                         <div class="mt-1">
                             <input #imageInput type="file" (change)="processImage($event)" style="display: none;">
                             <a class="btn btn-outline-secondary btn-sm" (click)="imageInput.click()"><i class="fa fa-camera" aria-hidden="true"></i></a>
                             <i *ngIf="imagemCarregada" class="fa fa-check ml-2" style="color: green; height: 1px;" aria-hidden="true"></i>
-                            <a class="btn btn-success btn-sm float-right"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                            <button type="submit" class="btn btn-success btn-sm float-right"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </form>
