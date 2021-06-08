@@ -12,9 +12,14 @@
                 </div>
             </div>
             <hr>
-            <div class="publications">
-                <app-publication></app-publication>
+            <div *ngIf="publicacoes; else semPublicacoes" class="publications">
+                <div *ngFor="let publicacao of publicacoes;">
+                    <app-publication [publicacao]="publicacao"></app-publication>
+                </div>
             </div>
+            <ng-template #semPublicacoes>
+                Ainda não possui publicação.
+            </ng-template>
         </div>
         <div class="col-3"></div>
     </div>
