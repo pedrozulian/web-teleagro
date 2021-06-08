@@ -31,4 +31,8 @@ export class UsuariosService {
       map((usuario: PerfilUsuario[]) => usuario.map(u => new PerfilUsuario().deserialize(u)))
     );
   }
+
+  trocarFoto(idUsuario: number, foto: string) {
+    return this.http.put(`${this.utils.apiUrl}/usuarios/${idUsuario}/trocar-foto`, { foto: foto}, this.utils.getHeader());
+  }
 }
