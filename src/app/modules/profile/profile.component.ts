@@ -36,7 +36,9 @@ export class ProfileComponent implements OnInit {
   }
 
   carregarPublicacoes() {
-    this.publicacoesService.publicacoesUsuario(this.idUsuario).subscribe(data => this.publicacoes = data);
+    this.publicacoesService
+      .getPublicacoesUsuario(this.idUsuario)
+        .subscribe(data => this.publicacoes = data);
   }
 
 }
