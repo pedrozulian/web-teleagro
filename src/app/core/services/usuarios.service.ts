@@ -19,7 +19,7 @@ export class UsuariosService {
             .post(`${this.utils.apiUrl}/usuarios/cadastro/`, form);
   }
 
-  login(form) {
+  login(form): Observable<any> {
     return this.http.post(`${this.utils.apiUrl}/usuarios/login`, form);
   }
 }
